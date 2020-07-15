@@ -10,7 +10,9 @@ class App extends Component {
 }
 
  setText = () => {
-  let formText = "Predefined Text"
+  let search = window.location.search;
+  let params = new URLSearchParams(search);
+  let formText = params.get('text');
 
   this.setState({ 
     unsafeText: (formText) ? formText : "Username or Password can not be empty"
